@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/history_item_background"
+    android:padding="16dp">
+
+    <Space
+        android:id="@+id/start_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/end_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_cancel_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="@+id/start_space"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/holo_red_dark" />
+
+    <ImageButton
+        android:id="@+id/btn_accept_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_save"
+        app:layout_constraintEnd_toEndOf="@+id/end_space"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/holo_green_dark" />
+
+    <TextView
+        android:id="@+id/tv_order_number_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ЗАКАЗ №"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tv_order_id"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_order_number_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_order_number_label"
+        tools:text="123" />
+
+    <TextView
+        android:id="@+id/tv_status_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Статус:"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_number_label" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_status_label"
+        app:layout_constraintStart_toEndOf="@+id/tv_status_label"
+        tools:text="В обработке" />
+
+    <TextView
+        android:id="@+id/tv_total_amount_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Общая сумма:"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_status_label" />
+
+    <TextView
+        android:id="@+id/tv_total_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_total_amount_label"
+        app:layout_constraintStart_toEndOf="@+id/tv_total_amount_label"
+        tools:text="1500 руб." />
+
+    <TextView
+        android:id="@+id/tv_address_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Адрес:"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total_amount_label" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@+id/tv_address_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_address_label"
+        tools:text="ул. Пушкина, д. Колотушкина" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
