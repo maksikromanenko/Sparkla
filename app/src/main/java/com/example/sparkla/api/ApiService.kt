@@ -65,7 +65,7 @@ data class RatingRequest(
 )
 
 object ApiClient {
-    private const val BASE_URL = "http://100.119.247.87:8000/api/"
+    private const val BASE_URL = "http://100.66.233.102:8000/api/"
 
     val instance: ApiService by lazy {
         val okHttpClient = OkHttpClient.Builder()

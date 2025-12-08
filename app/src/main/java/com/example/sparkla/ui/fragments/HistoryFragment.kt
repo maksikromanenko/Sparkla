@@ -50,6 +50,7 @@ class HistoryFragment : Fragment() {
                     return@launch
                 }
                 val orderHistory = historyResponse.body() ?: emptyList()
+                val sortedHistory = orderHistory.sortedByDescending { it.status == "pending" }
 
                 val productsResponse = ApiClient.instance.getProducts("Bearer $token")
                 if(!productsResponse.isSuccessful) {
@@ -58,7 +59,7 @@ class HistoryFragment : Fragment() {
                 }
                 val products = productsResponse.body() ?: emptyList()
 
-                historyAdapter = HistoryAdapter(orderHistory, products, this@HistoryFragment)
+                historyAdapter = HistoryAdapter(sortedHistory, products, this@HistoryFragment)
                 historyRecyclerView.adapter = historyAdapter
             } catch (t: Throwable) {
                 Toast.makeText(requireContext(), "Ошибка: ${t.message}", Toast.LENGTH_SHORT).show()
