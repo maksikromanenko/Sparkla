@@ -38,7 +38,9 @@ data class ProductData(
     @SerializedName("is_available")
     val isAvailable: Boolean,
     @SerializedName("product_type")
-    val productType: String
+    val productType: String,
+    @SerializedName("average_rating")
+    val averageRating: String?
 ): Serializable
 
 data class LoginRequest(

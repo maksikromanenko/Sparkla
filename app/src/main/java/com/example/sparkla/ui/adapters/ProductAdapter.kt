@@ -40,10 +40,17 @@ class ProductAdapter(private var products: List<ProductData>) : RecyclerView.Ada
         private val productName: TextView = itemView.findViewById(R.id.product_name)
         private val productPrice: TextView = itemView.findViewById(R.id.product_price)
         private val productImage: ImageView = itemView.findViewById(R.id.product_image)
+        private val productRating: TextView = itemView.findViewById(R.id.product_rating)
 
         fun bind(product: ProductData) {
             productName.text = product.name
             productPrice.text = "${product.price} руб."
+            if (product.averageRating != null) {
+                productRating.text = product.averageRating
+                productRating.visibility = View.VISIBLE
+            } else {
+                productRating.visibility = View.GONE
+            }
 
             Glide.with(itemView.context)
                 .load(product.imageUrl)

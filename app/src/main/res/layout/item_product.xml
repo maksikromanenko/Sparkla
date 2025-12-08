@@ -20,6 +20,19 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
+        android:id="@+id/product_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:padding="8dp"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/product_image"
+        app:layout_constraintTop_toTopOf="@id/product_image"
+        tools:text="4.5" />
+
+    <TextView
         android:id="@+id/product_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
