@@ -11,7 +11,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/product_image_dialog"
@@ -26,52 +27,52 @@
 
         <TextView
             android:id="@+id/product_name_dialog"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_image_dialog"
-            tools:text="Лампочка" />
-
-        <TextView
-            android:id="@+id/product_price_dialog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/product_name_dialog"
-            tools:text="123.00 BYN" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_image_dialog"
+            tools:text="Лампочка" />
 
         <TextView
             android:id="@+id/product_description_dialog"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
             android:ellipsize="end"
             android:maxLines="3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/product_name_dialog"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_name_dialog"
             tools:text="Описание" />
+
+        <TextView
+            android:id="@+id/product_price_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_description_dialog"
+            tools:text="123.00 BYN" />
 
         <LinearLayout
             android:id="@+id/quantity_selector_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:background="@drawable/purple_background"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/product_price_dialog"
-            app:layout_constraintTop_toBottomOf="@+id/product_description_dialog">
+            app:layout_constraintBottom_toBottomOf="@+id/product_price_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/product_price_dialog">
 
             <ImageButton
                 android:id="@+id/remove_button_dialog"
@@ -104,17 +105,15 @@
             android:id="@+id/add_to_cart_button_dialog"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            app:backgroundTint="@color/purple"
             android:text="Добавить в корзину"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
+            app:backgroundTint="@color/purple"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/quantity_selector_dialog"
-            app:layout_constraintStart_toStartOf="@+id/product_name_dialog"
-            app:layout_constraintTop_toBottomOf="@+id/quantity_selector_dialog" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_price_dialog" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
