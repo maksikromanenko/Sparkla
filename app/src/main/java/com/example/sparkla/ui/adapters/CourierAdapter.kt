@@ -68,6 +68,7 @@ class CourierAdapter(
                 "pending" -> "Ожидание"
                 "delivered" -> "Доставлен"
                 "cancelled" -> "Отменён"
+                "accepted" -> "Принят"
                 else -> status
             }
         }
